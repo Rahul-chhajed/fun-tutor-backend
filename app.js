@@ -17,7 +17,13 @@ mongoose
     .catch((err) => console.error("MongoDB connection error:", err));
 
 
-app.use(cors());
+
+
+app.use(cors({
+  origin: "https://funtutor.netlify.app", // allow only your frontend domain
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
