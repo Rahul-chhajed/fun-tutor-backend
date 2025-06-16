@@ -12,7 +12,7 @@ const app = express();
 
 
 mongoose
-    .connect("mongodb://localhost:27017/tutorDB")
+    .connect("process.env.MONGO_URI")
     .then(() => console.log("MongoDB Connected"))
     .catch((err) => console.error("MongoDB connection error:", err));
 
