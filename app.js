@@ -20,7 +20,9 @@ mongoose
 
 
 app.use(cors({
-  origin: "https://funtutor.netlify.app", // allow only your frontend domain
+  origin: "https://funtutor.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
 
@@ -644,7 +646,7 @@ app.delete('/api/quiz/delete/:quizTitle', authenticateToken, async (req, res) =>
 });
 
 
-
 app.listen(PORT, function () {
-    console.log("Server started on port 3000");
+    console.log(`Server started on port ${PORT}`);
 });
+
