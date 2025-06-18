@@ -22,12 +22,8 @@ mongoose
 
 
 
-app.use(cors({
-  origin: "https://funtutor.netlify.app",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
-}));
+app.options('*', cors()); // Allow preflight for all routes
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
