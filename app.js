@@ -10,7 +10,7 @@ const SECRET_KEY = process.env.JWT_SECRET || "your_secret_key"; // Use an enviro
 
 const app = express();
 
-
+const PORT = process.env.PORT || 5000;
 mongoose
     .connect("process.env.MONGO_URI")
     .then(() => console.log("MongoDB Connected"))
@@ -645,6 +645,6 @@ app.delete('/api/quiz/delete/:quizTitle', authenticateToken, async (req, res) =>
 
 
 
-app.listen(3000, function () {
+app.listen(PORT, function () {
     console.log("Server started on port 3000");
 });
