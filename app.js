@@ -12,7 +12,7 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 mongoose
-    .connect(`${process.env.MONGO_URI}/teacher`, {
+    .connect(`${process.env.MONGO_URI}/test`, {
   useNewUrlParser: true,
   useUnifiedTopology: true
   })
