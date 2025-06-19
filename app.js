@@ -20,7 +20,7 @@ mongoose
 
 
 const corsOptions = {
-    origin: "https://funtutor.netlify.app/", // or "*" for all origins (not recommended for prod)
+    origin: "https://funtutor.netlify.app", // or "*" for all origins (not recommended for prod)
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 };
