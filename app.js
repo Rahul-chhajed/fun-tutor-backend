@@ -19,7 +19,14 @@ mongoose
 
 
 
-app.options('*', cors()); // Allow preflight for all routes
+const corsOptions = {
+    origin: "http://localhost:5173", // or "*" for all origins (not recommended for prod)
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+};
+
+app.use(cors(corsOptions));
+
 
 
 app.use(express.json());
